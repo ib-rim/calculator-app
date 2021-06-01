@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html" class="theme1">
   <header>
     <link rel="stylesheet" href="main.css">
   </header> 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-    <link rel="icon" type="css" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="icon" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <title>Calculator app</title>
   </head>
@@ -14,31 +14,58 @@
     <div class="container">
       <h1>calc</h1>
       <h5>THEME</h5>
-      <div class="toggle">
+      <button onclick="toggleTheme()" class="theme">
+        <p class="label">1 2 3</p>
+        <!-- <form>
+          <input type="radio" name="theme">
+          <input type="radio" name="theme">
+          <input type="radio" name="theme">
+        </form> -->
+      </button>
+      <script>
+        var theme = 1;
 
-      </div>
+        function toggleTheme() {
+          if(theme==1){
+            document.getElementById("slider").style.margin = "52px 0 0 265px";
+            document.getElementById("html").className = "theme2";
+            theme = 2;
+          }
+          else if(theme==2){
+            document.getElementById("slider").style.margin = "52px 0 0 290px";
+            document.getElementById("html").className = "theme3";
+            theme = 3;
+          }
+          else {
+            document.getElementById("slider").style.margin = "52px 0 0 240px";
+            document.getElementById("html").className = "theme1";
+            theme = 1;
+          }
+        }
+      </script>
+      <div onclick="toggleTheme()" id="slider" class="slider"></div>
       <div class="screen">
         399,981
       </div>
       <div class="keys">
-        <button class="square off-white">7</button>
-        <button class="square off-white">8</button>
-        <button class="square off-white">9</button>
-        <button class="square blue1">DEL</button>
-        <button class="square off-white">4</button>
-        <button class="square off-white">5</button>
-        <button class="square off-white">6</button>
-        <button class="square off-white">+</button>
-        <button class="square off-white">1</button>
-        <button class="square off-white">2</button>
-        <button class="square off-white">3</button>
-        <button class="square off-white">-</button>
-        <button class="square off-white">.</button>
-        <button class="square off-white">0</button>
-        <button class="square off-white">/</button>
-        <button class="square off-white">x</button>
-        <button class="rectangle blue1">RESET</button>
-        <button class="rectangle red">=</button>
+        <button class="square button3">7</button>
+        <button class="square button3">8</button>
+        <button class="square button3">9</button>
+        <button class="square button2" style="color:white">DEL</button>
+        <button class="square button3">4</button>
+        <button class="square button3">5</button>
+        <button class="square button3">6</button>
+        <button class="square button3">+</button>
+        <button class="square button3">1</button>
+        <button class="square button3">2</button>
+        <button class="square button3">3</button>
+        <button class="square button3">-</button>
+        <button class="square button3">.</button>
+        <button class="square button3">0</button>
+        <button class="square button3">/</button>
+        <button class="square button3">x</button>
+        <button class="rectangle button2" style="color:white">RESET</button>
+        <button class="rectangle button1">=</button>
       </div>
     </div>
   </body>

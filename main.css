@@ -1,13 +1,7 @@
 
 :root {
 	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--blue1:#647297;
-    --blue2:hsl(222, 26%, 31%);
-    --blue3:hsl(223, 31%, 20%);
-    --blue4:hsl(224, 36%, 15%);
-    --white:#f5f5f7;
-    --off-white:#eae3db;
-    --red:#d13f30;
+    
 }
 
 @font-face {
@@ -15,10 +9,55 @@
     src: url('fonts/Spartan-VariableFont_wght.ttf');
 }
 
+.theme1 {
+    --button1:hsl(6, 64%, 50%);
+    --button2:hsl(224, 20%, 49%);
+    --button3:hsl(32, 26%, 89%);
+    --button1shadow:hsl(6, 70%, 34%);
+    --button2shadow:hsl(224, 28%, 35%);
+    --button3shadow:hsl(28, 16%, 65%);
+    --background1:hsl(222, 26%, 31%);
+    --background2:hsl(223, 31%, 20%);
+    --background3:hsl(224, 36%, 15%);
+    --text1:hsl(0, 0%, 100%);
+    --text2: hsl(221, 14%, 31%);
+    --text3: hsl(0, 0%, 100%);
+}
+
+.theme2 {
+    --button1:hsl(25, 98%, 40%);
+    --button2:hsl(185, 42%, 37%);
+    --button3:hsl(45, 7%, 89%);
+    --button1shadow:hsl(25, 99%, 27%);
+    --button2shadow:hsl(185, 58%, 25%);
+    --button3shadow:hsl(35, 11%, 61%);
+    --background1:hsl(0, 0%, 90%);
+    --background2:hsl(0, 5%, 81%);
+    --background3:hsl(0, 0%, 93%);
+    --text1:hsl(60, 10%, 19%);
+    --text2: hsl(60, 10%, 19%);
+    --text3: hsl(0, 0%, 100%);
+}
+
+.theme3 {
+    --button1:hsl(176, 100%, 44%);
+    --button2:hsl(281, 89%, 26%);
+    --button3:hsl(268, 47%, 21%);
+    --button1shadow:hsl(177, 92%, 70%);
+    --button2shadow:hsl(285, 91%, 52%);
+    --button3shadow:hsl(290, 70%, 36%);
+    --background1:hsl(268, 75%, 9%);
+    --background2:hsl(268, 71%, 12%);
+    --background3:hsl(268, 71%, 12%);
+    --text1:hsl(52, 100%, 62%);
+    --text2: hsl(52, 100%, 62%);
+    --text3: hsl(198, 20%, 13%);
+}
+
 html {
     height: 100%;
     margin: 0;
-    background-color: var(--blue2);
+    background-color: var(--background1);
     font-family: 'Spartan';
     font-weight: 700;
 }
@@ -30,29 +69,56 @@ html {
 }
 
 h1 {
-    color: var(--white);
+    color: var(--text1);
     display: inline-block;
-}
-
-.toggle {
-    background-color: var(--blue3);
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 1em;
-    border-radius: 100px;
-    width: 70px;
-    height: 25px;
 }
 
 h5 {
     display: inline-block;
-    margin-left: 8em;
-    color: var(--white)
+    margin-left: 7em;
+    color: var(--text1)
+}
+
+.theme {
+    background-color: var(--background2);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1em;
+    border-radius: 100px;
+    border: none;
+    width: 80px;
+    height: 30px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    margin: 52px 0 0 240px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 0.1em solid var(--button1);
+    background-color: var(--button1);
+    transition: 0.3s margin;
+}
+
+.label {
+    color: var(--text1);
+    position: relative;
+    /* top: 15px;
+    right: 86px; */
+    top: -32px;
+    right: -6px;
+    font-family: 'Spartan';
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 7px;
 }
 
 .screen {
-    background-color: var(--blue4);
-    color: var(--white);
+    background-color: var(--background3);
+    color: var(--text1);
     padding: 0.75em 0.5em;
     border-radius: 10px;
     text-align: right;
@@ -60,14 +126,14 @@ h5 {
 }
 
 .keys {
-    background-color: var(--blue3);
+    background-color: var(--background2);
     margin-top: 2em;
     padding: 1em;
     border-radius: 10px;
     gap: 1em;
 }
 
-button {
+button.square, button.rectangle {
     font-family: 'Spartan';   
     font-weight: 700;
     margin: 8px 5px;
@@ -76,11 +142,11 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover.square, button:hover.rectangle {
     opacity: 95%;
 }
 
-button:active {
+button:active.square, button:active.rectangle  {
     box-shadow: none;
     transform: translateY(3px);
 }
@@ -99,23 +165,26 @@ button:active {
     border-radius: 5px;
 }
 
-.off-white {
-    background-color: var(--off-white);
-    font-size: 28px;
-    color: var(--blue2);
-    box-shadow: 0px 3px hsl(28, 16%, 65%);
-}
-
-.blue1 {
-    color: var(--white);
-    font-size: 16px;
-    background-color: var(--blue1);
-    box-shadow: 0px 3px hsl(224, 28%, 35%);
-}
-
-.red {
-    color: var(--white);
+.button1 {
+    color: var(--text3);
     font-size: 20px;
-    background-color: var(--red);
-    box-shadow: 0px 3px hsl(6, 70%, 34%);
+    background-color: var(--button1);
+    box-shadow: 0px 3px var(--button1shadow);
 }
+
+.button2 {
+    color: var(--text1);
+    font-size: 16px;
+    background-color: var(--button2);
+    box-shadow: 0px 3px var(--button2shadow);
+}
+
+.button3 {
+    background-color: var(--button3);
+    font-size: 28px;
+    color: var(--text2);
+    box-shadow: 0px 3px var(--button3shadow);
+}
+
+
+
