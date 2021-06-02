@@ -4,7 +4,7 @@
 setCurrentTheme()
 
 function setCurrentTheme() {
-    if (localStorage.getItem('theme') === '1'){
+    if (localStorage.getItem('theme') === '1' || localStorage.getItem('theme') === null){
         setTheme1();
     } 
     else if (localStorage.getItem('theme') === '2'){
